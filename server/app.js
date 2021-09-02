@@ -3,6 +3,7 @@ const cors = require("cors")
 const morgan = require("morgan")
 const bodyParser = require("body-parser")
 const mongoose = require('mongoose')
+const {MongoClient} = require('mongodb');
 const fileUpload = require('express-fileupload')
 
 const app = express()
@@ -31,48 +32,24 @@ app.use('/api/v1/chat', chatRoute)
 app.use('/api/v1/admin', adminRoute)
 app.use('/api/v1/client', clientRoute)
 
-app.use((req, res, next) => {
-    let error = new Error('404 page Not Found')
-    error.status = 404
-    next(error)
-})
-
-app.use((error, req, res, next) => {
-    if (error.status == 404) {
-        return res.status(404).json({
-            message: error.message
-        })
-    }
-    if (error.status == 400) {
-        return res.status(400).json({
-            message: "Bad request"
-        })
-    }
-    return res.status(500).json({
-        message: "Internal Server Error"
-    })
-})
 
 
 app.get('/', (req, res) => {
     res.send("Hello I am node.js application")
 })
 
-// DB Connection
-mongoose.connect('mongodb+srv://16eiacs080:16eiacs080@cluster0-lkz2b.mongodb.net/idoctor?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useNewUrlParser: true
-});
-const db = mongoose.connection
-db.on('error', (err) => {
-    console.log(err.message)
-})
-db.once('open', () => {
-    console.log('MongoDB connection success')
-})
 
+mongoose.connect(
+ "mongodb+srv://16eiacs080:16eiacs080@cluster0.1wbxw.mongodb.net/doctor?retryWrites=true&w=majority",
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    (err) => {
+        if (!err) {
+            console.log("MongoDB Connection Succeeded.");
+        } else {
+            console.log("Error in DB connection : " + err);
+        }
+    }
+);
 // App Port
 const port = process.env.PORT || 4000
 app.listen(port, () => {
