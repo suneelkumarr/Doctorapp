@@ -1,0 +1,53 @@
+@import "../../../App.scss";
+
+.search {
+    .card {
+        width: 100%;
+        margin: auto;
+        background: none;
+        border-radius: 25px;
+
+        form {
+            .form-control {
+                border: 0;
+                height: 45px;
+                font-size: 14px;
+                padding-left: 15px;
+                border-top-left-radius: 25px;
+                border-bottom-left-radius: 25px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-right: 1px solid #dfdfdf;
+            }
+
+            .form-control-error {
+                border: 1px solid brown;
+                border-right: 1px solid #dfdfdf;
+            }
+
+            .custom-select__control {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            .btn {
+                border: 0;
+                height: 45px;
+                border: 0;
+                background: $secondary-color;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+            }
+        }
+
+        @media (min-width: 576px) {
+            width: 500px;
+        }
+
+        @media (min-width: 768px) {
+            width: 600px;
+        }
+    }
+}

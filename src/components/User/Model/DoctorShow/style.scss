@@ -1,0 +1,86 @@
+@import "../../../../App.scss";
+
+.doctor-show {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    overflow-y: auto;
+    background: #fff;
+    transition: 0.4s all;
+
+    .info-container {
+        .body {
+            .img-box {
+                width: 120px;
+                height: 120px;
+                overflow: hidden;
+                margin: auto;
+
+                img {
+                    min-width: 100%;
+                    min-height: 100%;
+                }
+            }
+
+            h5 {
+                color: #000;
+                font-weight: 700;
+                margin-bottom: 0;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            h6 {
+                font-size: 14px;
+                font-weight: 700;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            p {
+                color: #000;
+                margin-bottom: 5px;
+                font-size: 13px;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            // Table
+            .table {
+                thead {
+                    tr {
+                        th {
+                            font-size: 13px;
+                            font-family: 'Roboto', sans-serif;
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        th {
+                            font-size: 13px;
+                            font-weight: 400;
+                            text-transform: capitalize;
+                            font-family: 'Roboto', sans-serif;
+                        }
+                    }
+                }
+            }
+
+            .btn {
+                color: #fff;
+                font-size: 15px;
+                font-weight: 700;
+                padding: 8px 20px;
+                background: $secondary-color;
+                font-family: 'Roboto', sans-serif;
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        width: 450px;
+    }
+}

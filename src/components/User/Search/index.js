@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import './style.scss'
 import Select from 'react-select'
-import {Icon} from 'react-icon-kit';
-import {ic_search} from 'react-icon-kit/md'
-import {useFrom} from 'react-hook-from'
+import {Icon} from 'react-icons-kit';
+import {ic_search} from 'react-icons-kit/md'
+import {useForm} from 'react-hook-form'
 import {useHistory} from 'react-router-dom'
 
 
@@ -11,10 +11,10 @@ const Index = ({
     lat,lang
 }) =>{
     const history= useHistory()
-    const {register,handleSubmit, error} = useFrom()
+    const {register,handleSubmit,formState: { errors }} = useForm()
     const {specialist, setSpecialist} = useState()
 
-    const option = [
+    const options = [
         {value: 'Medicine' , label:'Medicine'},
         {value: 'Phycologist' , label:'Phycologist'},
         {value:"Cardiologist" , label:'Cardiologist'}
@@ -49,12 +49,9 @@ const Index = ({
                                     <div className="flex-fill">
                                         <input
                                             type="text"
-                                            name="deases"
-                                            className={errors.deases ? "form-control shadow-none form-control-error" : "form-control shadow-none"}
                                             placeholder="Deases name"
-                                            ref={register({
-                                            required: true
-                                            })}
+                                            {...register('deases', { required: true })}
+                                            className={errors.deases ? "form-control shadow-none form-control-error" : "form-control shadow-none"}
                                         />
                                     </div>
                                     <div>
@@ -87,4 +84,20 @@ const Index = ({
             </div>
         </div>
     )
+}
+
+export default Index;
+
+const customStyles = {
+    control: (provided, state) => ({
+        ...provided,
+        width: 170,
+        height: 45,
+        fontSize: 14,
+        color: '#000',
+        boxShadow: 'none',
+        '&:hover': { borderColor: 'none' },
+        border: state.isFocused ? 'none' : 'none',
+        borderRadius: '25px'
+    })
 }

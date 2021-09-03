@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import React from 'react';
+import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop/index'
+import HomeIndex from './pages/Home/index'
+import AboutIndex from './pages/About/index'
+import ContentIndex from './pages/Contact/index'
+import SearchResultIndex from './pages/SearchResult/index'
+// //Auth 
+import LoginIndex from './pages/Auth/Login/index'
+import RegisterIndex from './pages/Auth/Register/index'
+import ResetIndex from './pages/Auth/Reset/index'
+// import AdminLogin from './pages/Auth/Admin/Login'
+
+// //Account
+// import DoctorAccountMaster from './pages/Account/Doctor/Master/index'
+// import PatientAccountMaster from './pages/Account/Patient/Master/index'
+// import AdminMaster from './pages/Account/Admin/Master/index'
+// import PrivateMAster from './components/PrivateRoute/index'
+
+// //Chat
+
+// import ChatIndex from './pages/Chat/index'
+
+// import FourOFour from './pages/FourOFour/index'
+
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Router>
+       <ScrollToTop>
+         <Switch>
+           <Route exact path='/' component={HomeIndex} />
+           <Route exact path="/about-us" component={AboutIndex} />
+           <Route exact path="/contact-us" component={ ContentIndex } />
+           <Route exact path="/search" component={SearchResultIndex} />
+           <Route exact path="/login" component={LoginIndex} />
+           <Route exact path="/register" component={RegisterIndex} />
+           <Route exact path="/reset" component={ResetIndex} />
+           
+         </Switch>
+       </ScrollToTop>
+     </Router>
     </div>
   );
 }

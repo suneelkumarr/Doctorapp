@@ -1,0 +1,61 @@
+@import "../../../App.scss";
+
+.footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: hsla(0, 0%, 87.5%, 0.35);
+    border-top: 1px solid #dfdfdf;
+
+    img {
+        height: 40px;
+
+        @media (min-width: 992px) {
+            height: 50px;
+        }
+    }
+
+    p {
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    h5 {
+        font-weight: 900;
+        margin-bottom: 15px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    a {
+        display: block;
+        color: #000;
+        font-size: 15px;
+        margin-bottom: 6px;
+        text-transform: capitalize;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    a:hover {
+        color: $primary-color;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            display: inline-block;
+            margin-right: 8px;
+
+            a {
+                color: #fff;
+                padding: 5px 8px;
+                background: $primary-color;
+            }
+
+            a:hover {
+                color: #fff;
+            }
+        }
+    }
+}

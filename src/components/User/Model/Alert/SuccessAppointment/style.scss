@@ -1,0 +1,40 @@
+@import "../../../../../App.scss";
+
+.alert-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.932);
+
+  .card {
+    margin: auto;
+    background: #fff;
+    border-radius: 6px;
+
+    .card-body {
+      .icon {
+        color: $secondary-color;
+      }
+
+      h3 {
+        font-weight: 900;
+        line-height: 1.8rem;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      width: 93vw;
+    }
+
+    @media (min-width: 576px) {
+      width: 500px;
+    }
+  }
+}

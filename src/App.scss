@@ -1,0 +1,38 @@
+@import "~bootstrap/scss/bootstrap";
+
+$primary-color: #1d1f7b;
+$secondary-color: #fec200;
+$dashboard-primary: #ff5733;
+$muted: #dfdfdfc9;
+
+/* Flex Box */
+
+.flex-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+}
+
+.flex-column {
+    -ms-flex-direction: column !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+    flex-direction: column !important;
+}
+
+// Column padding for admin dashboard col padding
+.col-padding {
+    padding: 10px;
+
+    @media (min-width: 992px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

@@ -1,0 +1,59 @@
+@import "../../../App.scss";
+
+.doctors-list-component {
+    .doctor-card {
+        overflow: hidden;
+        text-align: center;
+        border-radius: 6px;
+        // margin-bottom: 30px;
+        transition: 0.4s all;
+        background: #fff;
+        border: 1px solid #dfdfdf94;
+        cursor: pointer;
+
+        .card-body {
+            padding-top: 30px;
+            padding-bottom: 25px;
+            position: relative;
+
+            .img-box {
+                width: 90px;
+                height: 90px;
+                margin: auto;
+                overflow: hidden;
+
+                img {
+                    min-width: 100%;
+                    min-height: 100%;
+                }
+            }
+
+            .content {
+                padding-top: 10px;
+
+                h6 {
+                    font-size: 14px;
+                    margin-bottom: 0;
+                    text-transform: capitalize;
+                    font-family: 'Roboto', sans-serif;
+                }
+
+                p {
+                    font-size: 13px;
+                    margin-bottom: 0;
+                    text-transform: capitalize;
+                    font-family: 'Roboto', sans-serif;
+                }
+            }
+
+            @media (max-width: 576px) {
+                height: 200px;
+            }
+        }
+    }
+
+    .doctor-card:hover {
+        border: 1px solid #fff;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+}
