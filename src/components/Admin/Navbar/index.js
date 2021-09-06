@@ -24,7 +24,7 @@ const Index = ({ toggle }) => {
         <div className="ml-auto">
           <ul>
             <li>
-              <p className="mb-0 text-capitalize">abdullah al mamun</p>
+              <p className="mb-0 text-capitalize">suneel</p>
             </li>
             <li>
               <img src={Images.FakeUser} className="img-fluid" alt="..." />

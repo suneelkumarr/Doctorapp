@@ -56,7 +56,7 @@ function App() {
             </Route>
 
             {/* Admin Master */}
-            <PrivateRoute path="/admin" role="super_admin">
+            <PrivateRoute path="/admin" role="doctor">
               <AdminMaster />
             </PrivateRoute>
             {/* <Route path="/admin" role="admin">

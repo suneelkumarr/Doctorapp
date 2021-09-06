@@ -32,13 +32,16 @@ const StepOne = ({ responsestep, id }) => {
 
     try {
       setLoading(true);
+      const token = `token ${localStorage.getItem('token')}`
       let formData = new FormData();
       formData.append("name", data.name);
       formData.append("image", selectedFile);
 
       const response = await axios.post(
-        `${apiURL}doctor/profile/${id}/update`,
-        formData
+        `${apiURL}/doctor/profile/${id}/update`,
+        formData, {
+          headers: {authorization: token}
+        }
       );
       if (response.status === 200) {
         setLoading(false);

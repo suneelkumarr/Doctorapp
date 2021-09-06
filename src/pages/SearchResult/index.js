@@ -14,7 +14,7 @@ const Index = () => {
     //search doctors
     const searchDoctors = async () => {
       try {
-        const response = await axios.get(`${apiURL}users`);
+        const response = await axios.get(`${apiURL}/users`);
         setDoctors(response.data);
       } catch (error) {
         if (error) console.log(console.response);

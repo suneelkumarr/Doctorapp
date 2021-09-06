@@ -27,7 +27,7 @@ const Master = () => {
     // Fetch Logged User
     const loggedUser = async () => {
       try {
-        const response = await axios.get(`${apiURL}patient/me`, header);
+        const response = await axios.get(`${apiURL}/patient/me`, header);
         if (response.status === 200) {
           setUser(response.data.patient);
           setLoading(false);

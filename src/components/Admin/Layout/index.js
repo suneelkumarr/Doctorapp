@@ -44,7 +44,7 @@ const Index = () => {
   const doLogout = async () => {
     try {
       setLogout(true);
-      const response = await axios(`${apiURL}admin/auth/logout`, header);
+      const response = await axios(`${apiURL}/admin/auth/logout`, header);
       if (response.status === 200) {
         setTimeout(() => {
           setLogout(false);

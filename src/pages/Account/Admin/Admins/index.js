@@ -14,12 +14,9 @@ import PreLoader from "../../../../components/Admin/Loader/index";
 const Index = () => {
   const [admins, setAdmins] = useState([]);
   const [isLoading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Fetch admin
-    const fetchAdmin = async () => {
+ const fetchAdmin = async () => {
       try {
-        const response = await axios.get(`${apiURL}admin/auth/index`);
+        const response = await axios.get(`${apiURL}/admin/auth/index`);
         if (response.status === 200) {
           setAdmins(response.data.admins);
           setLoading(false);
@@ -31,7 +28,8 @@ const Index = () => {
         }
       }
     };
-
+  useEffect(() => {
+    // Fetch admin
     fetchAdmin();
   }, []);
 

@@ -2,6 +2,7 @@ import jwt_decode from 'jwt-decode'
 
 export const checkIfLoggedIn = () => {
     const token = localStorage.getItem("token");
+    console.log(token)
     if (token) {
         const user = jwt_decode(token);
         if (user.role === 'doctor' || 'patient' || 'super_admin' || 'admin' || 'manager') {

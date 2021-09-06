@@ -31,9 +31,12 @@ const StepFour = ({ responsestep, id }) => {
       };
 
       setLoading(true);
+      const token = `token ${localStorage.getItem('token')}`
       const response = await axios.post(
-        `${apiURL}doctor/profile/${id}/update`,
-        data
+        `${apiURL}/doctor/profile/${id}/update`,
+        data, {
+          headers: {authorization: token}
+        }
       );
       if (response.status === 200) {
         setLoading(false);

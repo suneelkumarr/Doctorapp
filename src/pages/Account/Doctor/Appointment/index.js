@@ -18,7 +18,7 @@ const Index = () => {
   const getApprovedAppointments = useCallback(async () => {
     try {
       const response = await axios.get(
-        `${apiURL}doctor/appointment/${id}/approved`,
+        `${apiURL}/doctor/appointment/${id}/approved`,
         header
       );
       if (response.status === 200) {

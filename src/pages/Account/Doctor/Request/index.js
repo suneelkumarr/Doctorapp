@@ -21,7 +21,7 @@ const Index = () => {
   const getRequests = useCallback(async () => {
     try {
       const response = await axios.get(
-        `${apiURL}doctor/appointment/${id}/requests`,
+        `${apiURL}/doctor/appointment/${id}/requests`,
         header
       );
       if (response.status === 200) {
@@ -57,7 +57,7 @@ const Index = () => {
     try {
       setSubmitting(true);
       const response = await axios.put(
-        `${apiURL}doctor/appointment/approve`,
+        `${apiURL}/doctor/appointment/approve`,
         data,
         header
       );

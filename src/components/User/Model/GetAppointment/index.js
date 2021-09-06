@@ -32,7 +32,7 @@ const GetAppointment = ({ hidemodal, doctor }) => {
             appointmentData.patientId = patient._id
 
             setLoading(true)
-            const response = await axios.post(`${apiURL}patient/appointment/request`, appointmentData, header)
+            const response = await axios.post(`${apiURL}/patient/appointment/request`, appointmentData, header)
             if (response.status === 201) {
                 setLoading(false)
                 setSucess(true)

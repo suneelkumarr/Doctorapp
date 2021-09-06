@@ -32,7 +32,7 @@ const Index = ({ user }) => {
 
         setUpload(true);
         const response = await axios.post(
-          `${apiURL}patient/profile/${id}/update/photo`,
+          `${apiURL}/patient/profile/${id}/update/photo`,
           formData,
           header
         );
@@ -53,7 +53,7 @@ const Index = ({ user }) => {
     try {
       setLoading(true);
       const response = await axios.post(
-        `${apiURL}patient/profile/${id}/update/bio`,
+        `${apiURL}/patient/profile/${id}/update/bio`,
         data,
         header
       );

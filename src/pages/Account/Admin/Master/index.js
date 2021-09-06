@@ -2,9 +2,9 @@ import React from "react";
 import "./style.scss";
 import { Switch, Route } from "react-router-dom";
 
-import Layout from "../../../../components/Admin/Layout/index";
-import Dashboard from "../Dashboard/index";
-import DoctorIndex from "../Doctor/index";
+import Layout from "../../../../components/Admin/Layout";
+import Dashboard from "../Dashboard";
+import DoctorIndex from "../Doctor";
 import DoctorShow from "../Doctor/Show";
 import AdminIndex from "../Admins/index";
 import AdminCreate from "../Admins/Create";

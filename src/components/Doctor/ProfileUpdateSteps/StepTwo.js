@@ -22,10 +22,13 @@ const StepTwo = ({ responsestep, id }) => {
         specialist: data.specialist,
         currentHospital: data.currentHospital,
       };
+      const token = `token ${localStorage.getItem('token')}`
 
       const response = await axios.post(
-        `${apiURL}doctor/profile/${id}/update`,
-        newData
+        `${apiURL}/doctor/profile/${id}/update`,
+        newData, {
+          headers: {authorization: token}
+        }
       );
       if (response.status === 200) {
         setLoading(false);

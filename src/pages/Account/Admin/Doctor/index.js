@@ -13,7 +13,7 @@ const Index = () => {
     // Fetch doctors
     const fetchDoctor = async () => {
       try {
-        const response = await axios.get(`${apiURL}admin/doctor`);
+        const response = await axios.get(`${apiURL}/admin/doctor`);
         if (response.status === 200) {
           setDoctors(response.data.doctors);
           setLoading(false);

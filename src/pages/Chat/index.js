@@ -40,7 +40,7 @@ const Index = () => {
   const checkAppointmentStatus = useCallback(async () => {
     try {
       const response = await axios.get(
-        `${apiURL}chat/check/${appointmentId}/appointment`,
+        `${apiURL}/chat/check/${appointmentId}/appointment`,
         header
       );
       if (response.data.status === false) {

@@ -39,7 +39,7 @@ export default function Login() {
   const onSubmit = async (data) => {
     try {
       setLogging(true);
-      const response = await axios.post(`${apiURL}admin/auth/login`, data);
+      const response = await axios.post(`${apiURL}/admin/auth/login`, data);
       if (response.status === 200) {
         setLogging(false);
         localStorage.setItem("token", response.data.token);

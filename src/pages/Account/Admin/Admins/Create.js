@@ -7,14 +7,14 @@ import "react-toastify/dist/ReactToastify.css";
 import { apiURL } from "../../../../utils/apiURL";
 
 const Create = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit,formState: { errors }} = useForm();
   const [isLoading, setLoading] = useState(false);
 
   // Submit Form
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      const response = await axios.post(`${apiURL}admin/auth/store`, data);
+      const response = await axios.post(`${apiURL}/admin/auth/store`, data);
       if (response.status === 201) {
         setLoading(false);
         toast.success(response.data.message);
@@ -51,11 +51,9 @@ const Create = () => {
                     <input
                       type="text"
                       name="name"
+                      {...register("name", {required: "Name is required" })}
                       className="form-control shadow-none"
                       placeholder="Enter name"
-                      ref={register({
-                        required: "Name is required",
-                      })}
                     />
                   </div>
 
@@ -72,15 +70,9 @@ const Create = () => {
                     <input
                       type="text"
                       name="email"
+                      {...register("email", { required: true })}
                       className="form-control shadow-none"
                       placeholder="Enter e-mail"
-                      ref={register({
-                        required: "E-mail is required",
-                        pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: "Invalid email address",
-                        },
-                      })}
                     />
                   </div>
 
@@ -96,10 +88,8 @@ const Create = () => {
 
                     <select
                       name="role"
+                      {...register("role", { required: "Role is required"})}
                       className="form-control shadow-none"
-                      ref={register({
-                        required: "Role is required",
-                      })}
                     >
                       <option value="super_admin">Super Admin</option>
                       <option value="admin">Admin</option>
@@ -120,15 +110,13 @@ const Create = () => {
                     <input
                       type="password"
                       name="password"
+                      {...register("password", { required: "Please enter password",
+                      minLength: {
+                        value: 8,
+                        message: "minimum length 8 character",
+                      },})}
                       className="form-control shadow-none"
                       placeholder="Enter password"
-                      ref={register({
-                        required: "Please enter password",
-                        minLength: {
-                          value: 8,
-                          message: "Minimun length 8 character",
-                        },
-                      })}
                     />
                   </div>
 

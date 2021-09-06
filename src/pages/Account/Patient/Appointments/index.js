@@ -18,7 +18,7 @@ const Index = () => {
     const fetchAppointments = async () => {
       try {
         const response = await axios.get(
-          `${apiURL}patient/appointment/request/${id}/index`,
+          `${apiURL}/patient/appointment/request/${id}/index`,
           header
         );
         if (response.status === 200) {

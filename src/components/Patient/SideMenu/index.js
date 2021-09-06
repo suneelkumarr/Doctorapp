@@ -25,7 +25,7 @@ const Index = ({ user }) => {
   const doLogout = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`${apiURL}auth/logout`, header);
+      const response = await axios.get(`${apiURL}/auth/logout`, header);
       if (response.status === 200) {
         localStorage.clear();
         history.push("/");

@@ -16,7 +16,7 @@ const Show = () => {
   // Fetch doctor
   const fetchDoctor = useCallback(async () => {
     try {
-      const response = await axios.get(`${apiURL}admin/doctor/${id}/show`);
+      const response = await axios.get(`${apiURL}/admin/doctor/${id}/show`);
       if (response.status === 200) {
         setDoctor(response.data.doctor);
         setLoading(false);
@@ -35,7 +35,7 @@ const Show = () => {
     try {
       setUpdate(true);
       const response = await axios.put(
-        `${apiURL}admin/doctor/${id}/account/update/${"approved"}`
+        `${apiURL}/admin/doctor/${id}/account/update/${"approved"}`
       );
       if (response.status === 201) {
         fetchDoctor();
