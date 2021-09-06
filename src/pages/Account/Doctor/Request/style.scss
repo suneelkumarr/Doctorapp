@@ -1,0 +1,40 @@
+@import "../../../../App.scss";
+
+.index {
+  h4 {
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .request {
+    padding: 10px;
+    background: #dfdfdf2d;
+    border-bottom: 1px solid #dfdfdf;
+
+    p {
+      color: #000;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 0;
+      line-height: 12px;
+      text-transform: capitalize;
+      font-family: "Roboto", sans-serif;
+    }
+
+    small {
+      color: #555;
+      font-size: 12px;
+      text-transform: capitalize;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .btn {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      background: $primary-color;
+      text-transform: capitalize;
+      font-family: "Roboto", sans-serif;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import "../../../../App.scss";
+
+.patient-profile {
+  .card {
+    margin: auto;
+
+    .card-body {
+      padding-top: 40px;
+      padding-bottom: 40px;
+
+      .img-container {
+        .image {
+          width: 120px;
+          height: 120px;
+          overflow: hidden;
+          margin: auto;
+          position: relative;
+
+          img {
+            height: 120px;
+          }
+
+          .overlay {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.685);
+
+            p {
+              color: #fff;
+              font-size: 13px;
+              font-family: "Roboto", sans-serif;
+            }
+
+            .upload {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 60px;
+              cursor: pointer;
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      // Form
+      form {
+        p {
+          font-size: 13px;
+          margin-bottom: 3px;
+          margin-left: 3px;
+          font-family: "Roboto", sans-serif;
+        }
+
+        .form-control {
+          height: 42px;
+          font-size: 14px;
+          font-family: "Roboto", sans-serif;
+        }
+
+        .form-control:focus {
+          border: 1px solid $primary-color;
+        }
+
+        .btn {
+          color: #fff;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 10px 40px;
+          font-family: "Roboto", sans-serif;
+          background: $primary-color;
+        }
+      }
+    }
+
+    // @media (min-width: 576px) {
+    //     width: 450px;
+    // }
+  }
+}

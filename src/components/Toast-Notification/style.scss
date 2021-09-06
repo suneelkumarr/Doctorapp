@@ -1,0 +1,96 @@
+.notification-container {
+  box-sizing: border-box;
+  position: fixed;
+  width: 350px;
+  max-width: 100%;
+  z-index: 9999;
+  border-radius: 6px;
+  padding: 12px 15px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+
+  .notification-title {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0;
+    font-size: 17px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .notification-message {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+// Positions
+.top-right {
+  top: 12px;
+  right: 12px;
+  transition: transform 0.6s ease-in-out;
+  animation: toast-in-right 0.6s;
+}
+
+.bottom-right {
+  bottom: 12px;
+  right: 12px;
+  transition: transform 0.6s ease-in-out;
+  animation: toast-in-right 0.6s;
+}
+
+.top-left {
+  top: 12px;
+  left: 12px;
+  transition: transform 0.6s ease-in;
+  animation: toast-in-left 0.6s;
+}
+
+.bottom-left {
+  bottom: 12px;
+  left: 12px;
+  transition: transform 0.6s ease-in;
+  animation: toast-in-left 0.6s;
+}
+
+// End Positions
+
+// Backgrounds
+.success {
+  background: #28a745 !important;
+}
+
+.info {
+  background: #17a2b8 !important;
+}
+
+.warning {
+  background: #ffc107 !important;
+}
+
+.danger {
+  background: #dc3545 !important;
+}
+
+// End Backgrounds
+
+@keyframes toast-in-right {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes toast-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

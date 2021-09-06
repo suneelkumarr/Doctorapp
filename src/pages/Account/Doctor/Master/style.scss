@@ -1,0 +1,137 @@
+@import "../../../../App.scss";
+
+// Profile update page
+.update-page {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  .card {
+    width: 93vw;
+    .card-header {
+      h5 {
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+      }
+      p {
+        color: #555;
+        font-size: 15px;
+        font-family: "Roboto", sans-serif;
+      }
+    }
+
+    .card-body {
+      img {
+        width: 200px;
+      }
+
+      .btn {
+        color: #000;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 6px 25px;
+        background: #dfdfdf;
+        font-family: "Roboto", sans-serif;
+      }
+    }
+
+    @media (min-width: 576px) {
+      width: 550px;
+    }
+
+    @media (min-width: 768px) {
+      width: 650px;
+    }
+  }
+}
+
+.master {
+  // Mobile Navabr
+  .mobile-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background: #fff;
+    border-bottom: 1px solid #dfdfdf;
+
+    p {
+      margin-top: 7px;
+      margin-bottom: 0;
+      text-transform: capitalize;
+    }
+
+    .btn {
+      padding: 5px 6px;
+    }
+  }
+
+  // Sidebar
+
+  .sidebar {
+    .backdrop {
+      position: fixed;
+      top: 0;
+      left: 0%;
+      width: 100vw;
+      height: 100vh;
+      z-index: 999;
+      overflow-y: auto;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.4s;
+      background: rgba(0, 0, 0, 0.548);
+    }
+
+    .open-backdrop {
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0s;
+    }
+
+    .main-sidebar {
+      @media (max-width: 992px) {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 260px;
+        z-index: 999;
+        height: 100vh;
+        overflow-y: auto;
+        background: #fff;
+        transition: 0.4s all;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+      }
+
+      @media (min-width: 992px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100vh;
+        overflow-y: auto;
+        background: #fff;
+        padding: 20px;
+      }
+    }
+
+    .open-main-sidebar {
+      left: 0% !important;
+    }
+  }
+
+  // Main
+  .main {
+    width: 100%;
+
+    @media (max-width: 992px) {
+      padding-top: 70px;
+    }
+
+    @media (min-width: 992px) {
+      padding-left: 300px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import "../../../../App.scss";
+
+.appointments {
+  .table {
+    thead {
+      tr {
+        td {
+          color: #000;
+          font-size: 13px;
+          font-weight: 500;
+          border-bottom: 1px solid #dfdfdf;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          color: #000;
+          font-size: 13px;
+          font-weight: 300;
+          border-bottom: 1px solid #dfdfdf;
+
+          p {
+            padding-top: 4px;
+            margin-bottom: 0;
+          }
+
+          .btn {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 4px 10px;
+            text-transform: capitalize;
+            background: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

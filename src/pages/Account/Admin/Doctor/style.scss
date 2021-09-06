@@ -1,0 +1,86 @@
+@import "../../../../App.scss";
+
+// Show doctor
+.admin-doctor-show {
+  .img-container {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    overflow: hidden;
+    img {
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  .basic-info {
+    h5 {
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 0;
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: capitalize;
+    }
+  }
+
+  .education-info {
+    h5 {
+      font-weight: 700;
+    }
+    p {
+      color: #555;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 3px;
+      text-transform: capitalize;
+    }
+  }
+
+  .contact-info {
+    h5 {
+      font-weight: 700;
+    }
+    p {
+      color: #555;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 3px;
+      text-transform: capitalize;
+    }
+  }
+
+  .council-hour {
+    .table {
+      thead {
+        tr {
+          td {
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            font-size: 14px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  .btn {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 25px;
+    margin-top: 15px;
+    background: $dashboard-primary;
+  }
+}

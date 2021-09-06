@@ -1,0 +1,54 @@
+@import "../../../../App.scss";
+
+.profile-update-modal {
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    transition: opacity 0.4s;
+    background: rgba(253, 253, 253, 0.952);
+    z-index: 9999;
+    padding: 15px;
+
+    .custom-modal-dialog {
+      width: 1000px;
+      max-width: 100%;
+      margin: auto;
+
+      .card {
+        border-radius: 6px;
+        overflow: hidden;
+
+        .card-header {
+          h5 {
+            font-weight: 700;
+            font-family: "Roboto", sans-serif;
+          }
+        }
+
+        .card-body {
+          .form-control {
+            font-size: 14px;
+            font-weight: 500;
+            font-family: "Roboto", sans-serif;
+          }
+
+          .form-control:focus {
+            border: 1px solid $primary-color;
+          }
+
+          .btn {
+            font-size: 15px;
+            font-weight: 700;
+            margin-top: 20px;
+            padding: 8px 30px;
+            font-family: "Roboto", sans-serif;
+          }
+        }
+      }
+    }
+  }
+}

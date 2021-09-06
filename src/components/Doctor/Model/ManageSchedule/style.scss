@@ -1,0 +1,85 @@
+@import "../../../../App.scss";
+
+.manage-schedule-modal {
+  font-family: "Roboto", sans-serif;
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    transition: opacity 0.4s;
+    background: rgba(253, 253, 253, 0.952);
+    z-index: 9999;
+    padding: 15px;
+
+    .custom-modal-dialog {
+      width: 920px;
+      max-width: 100%;
+      margin: auto;
+
+      .card {
+        border-radius: 6px;
+        overflow: hidden;
+
+        .card-header {
+          h4 {
+            margin-top: 6px;
+            margin-bottom: 0;
+            font-weight: 700;
+          }
+
+          .btn {
+            padding: 6px;
+          }
+        }
+
+        .card-body {
+          .loader-section {
+            h3 {
+              color: #dfdfdf;
+              font-weight: 600;
+            }
+          }
+
+          .patient-info-column {
+            @media (min-width: 992px) {
+              border-right: 1px solid #dfdfdf;
+            }
+          }
+
+          p {
+            font-size: 14px;
+            margin-bottom: 0;
+            font-weight: 400;
+            font-weight: 500;
+            line-height: 1.8rem;
+          }
+
+          .danger-border {
+            border: 1px solid red !important;
+          }
+
+          .react-time-picker {
+            width: 350px;
+            max-width: 100%;
+            height: 50px;
+          }
+
+          .btn {
+            color: #fff;
+            width: 350px;
+            height: 45px;
+            max-width: 100%;
+            margin-top: 15px;
+            font-weight: 900;
+            border-radius: 0px;
+            background: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}

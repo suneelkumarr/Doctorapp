@@ -1,0 +1,24 @@
+@import "../../../App.scss";
+
+.conversation-messages {
+  p {
+    margin-bottom: 0;
+    padding: 6px 15px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .sent-message {
+    width: 250px;
+    color: #fff;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    background: #007cfa !important;
+  }
+
+  .recived-message {
+    width: 250px;
+    border-radius: 16px;
+    background: rgba(85, 85, 85, 0.123);
+  }
+}

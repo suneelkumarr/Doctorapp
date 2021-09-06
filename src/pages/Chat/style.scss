@@ -1,0 +1,102 @@
+@import "../../App.scss";
+
+.chat-room {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+
+  // Room Body
+  .room-body {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 66px;
+
+    // Left Menu
+    .left-menu {
+      overflow-y: auto;
+      width: 300px !important;
+    }
+
+    // Messages menu
+    .message-menu {
+      overflow-y: auto;
+      padding: 5px;
+
+      // Send Container
+      .send-container {
+        position: fixed;
+        bottom: 0;
+        z-index: 99;
+        left: 5px;
+        right: 5px;
+        background: #fff;
+
+        .form-control {
+          font-size: 14px;
+          border-radius: 25px;
+          font-family: "Roboto", sans-serif;
+        }
+
+        .error-border {
+          border: 1px solid red;
+        }
+
+        .btn {
+          padding: 5px;
+          background: #dfdfdf;
+        }
+
+        .btn:hover {
+          background: #c4c3c3;
+        }
+
+        .file-upload {
+          position: relative;
+
+          .upload {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            cursor: pointer;
+            opacity: 0;
+          }
+        }
+
+        @media (min-width: 992px) {
+          left: 305px;
+          right: 320px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        position: fixed;
+        top: 66px;
+        left: 0;
+        width: 100%;
+        overflow-y: auto;
+        height: 100vh;
+        padding-bottom: 115px;
+      }
+
+      @media (min-width: 992px) {
+        padding-bottom: 54px;
+        border-left: 1px solid #dfdfdf;
+        border-right: 1px solid #dfdfdf;
+      }
+    }
+
+    // Right Menu
+    .right-menu {
+      overflow-y: auto;
+      width: 300px !important;
+    }
+  }
+}

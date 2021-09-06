@@ -1,0 +1,42 @@
+@import "../../../App.scss";
+
+.chat-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 15px 20px;
+  background: #fff;
+
+  h6 {
+    margin-top: 9px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .image-container {
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    background: #000;
+
+    img {
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  .btn {
+    padding: 3px;
+    transition: 0.2s all;
+    background: #dfdfdf;
+  }
+
+  .btn:hover {
+    background: #ccc9c9;
+  }
+}
