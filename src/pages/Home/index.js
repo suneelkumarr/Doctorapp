@@ -14,7 +14,17 @@ const Index = () => {
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
   const [doctor, setDoctor] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false);
+
+  const fetchDoctors = async () => {
+    try {
+      const response = await axios.get(`${apiURL}/client/doctors`);
+      setDoctor(response.data.doctor);
+      setLoading(false);
+    } catch (error) {
+      if (error) console.log(console.response);
+    }
+  };
 
   useEffect(() => {
     const geo = navigator.geolocation;
@@ -29,16 +39,16 @@ const Index = () => {
 
     //fetch Doctors
 
-    const fetchDoctors = async () => {
-      try {
-        const response = await axios.get(`${apiURL}client/doctors`);
-        setDoctor(response.data.doctor);
-        setLoading(false);
-      } catch (error) {
-        if (error) console.log(console.response);
-      }
-    };
-
+    // const fetchDoctors = async () => {
+    //   try {
+    //     const response = await axios.get(`${apiURL}client/doctors`);
+    //     setDoctor(response.data.doctor);
+    //     setLoading(false);
+    //   } catch (error) {
+    //     if (error) console.log(console.response);
+    //   }
+    // };
+    setLoading(true)
     fetchDoctors();
   }, []);
   return (

@@ -11,6 +11,7 @@ import Loading from '../assets/static/loader.gif'
 import Unlock from '../assets/static/unlock.png'
 import PeopleSearch from '../assets/static/people_search.png'
 import Service from '../assets/static/service.png'
+import Doctor from '../assets/static/doctor.jpg'
 
 export const Images = {
     Logo,
@@ -25,5 +26,6 @@ export const Images = {
     Loading,
     Unlock,
     PeopleSearch,
-    Service
+    Service,
+    Doctor
 } 

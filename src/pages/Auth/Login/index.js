@@ -51,7 +51,7 @@ const Login = () => {
       };
 
       setLoading(true);
-      const response = await axios.post(`${apiURL}auth/login`, newData);
+      const response = await axios.post(`${apiURL}/login`, newData);
       if (response.status === 200) {
         setLoading(false);
         localStorage.setItem("token", response.data.token);

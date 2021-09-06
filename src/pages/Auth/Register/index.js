@@ -30,7 +30,7 @@ const Index = () => {
       };
 
       setLoading(true);
-      const response = await axios.post(`${apiURL}auth/register`, newData);
+      const response = await axios.post(`${apiURL}/auth/register`, newData);
       if (response.status === 201) {
         toast.success(response.data.message);
         setLoading(false);

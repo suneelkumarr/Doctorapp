@@ -2,6 +2,8 @@ import React, { useState, createRef } from 'react'
 import './style.scss'
 import Skeleton from 'react-loading-skeleton'
 import DoctorShowComponent from '../Model/DoctorShow/index'
+import { Images } from "../../../utils/Images";
+
 
 const Index = ({ doctors, loading }) => {
     const [show, setShow] = useState(false)
@@ -56,7 +58,7 @@ const Index = ({ doctors, loading }) => {
                                     onClick={() => shwoDoctorInfo(doctor)}
                                 >
                                     <div className="img-box rounded-circle">
-                                        <img src={doctor.image} className="img-fluid" alt="..." />
+                                        <img src={Images.Doctor} className="img-fluid" alt="..." />
                                     </div>
                                     <div className="content">
                                         <h6>{doctor.name}</h6>

@@ -3,7 +3,8 @@ import "./style.scss";
 import Icon from "react-icons-kit";
 import { ic_cloud_download } from "react-icons-kit/md";
 
-import testDownload from "../../../assets/doctor.jpg";
+import testDownload from "../../../assets/static/doctor.jpg";
+
 
 const Index = ({ files }) => {
   return (
