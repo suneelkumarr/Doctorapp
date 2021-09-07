@@ -6,7 +6,7 @@ const CheckAppointmentStatus = async (req, res, next) => {
     try {
         let response = {}
         const { id } = req.params
-        await CheckId(id)
+        CheckId(id)
 
         const result = await Appointment.findById(id, { status: 1, _id: 0 }).exec()
         result.status === 'approved' ? response.status = true : response.status = false

@@ -10,10 +10,10 @@ import "react-toastify/dist/ReactToastify.css";
 
 import AdminList from "../../../../components/Admin/AdminList/index";
 import PreLoader from "../../../../components/Admin/Loader/index";
-
 const Index = () => {
   const [admins, setAdmins] = useState([]);
   const [isLoading, setLoading] = useState(true);
+
  const fetchAdmin = async () => {
       try {
         const response = await axios.get(`${apiURL}/admin/auth/index`);

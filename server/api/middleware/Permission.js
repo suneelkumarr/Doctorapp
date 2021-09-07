@@ -43,7 +43,7 @@ const isDoctor = async (req, res, next) => {
         if (!token) return res.status(404).json({ message: 'Token not found' })
 
         // decode token
-        const splitToken = await req.headers.authorization.split(' ')[1]
+        const splitToken = token.split(' ')[1]
         const decode = await jwt.verify(splitToken, 'SECRET')
 
         // find doctor using token 

@@ -1,0 +1,44 @@
+@import "../../../App.scss";
+
+.admin-list {
+    padding-bottom: 10px;
+
+    .table {
+        thead {
+            tr {
+                td {
+                    font-size: 13px;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                td {
+                    font-size: 13px;
+                    font-weight: 400;
+
+                    .img-container{
+                            width: 40px;
+                            height: 40px;
+                            overflow: hidden;
+                            margin: auto;
+                        img{
+                            min-width: 40px;
+                            min-height: 40px;
+                        }
+                    }
+                    
+
+                    .btn {
+                        color: #fff;
+                        font-weight: 500;
+                        padding: 3px 10px;
+                        background: $dashboard-primary;
+                    }
+                }
+            }
+        }
+    }
+}
