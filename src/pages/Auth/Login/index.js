@@ -29,7 +29,7 @@ const Login = () => {
     const id = decode.id;
     localStorage.setItem("id", id);
 
-    if (role === "super_admin") {
+    if (role === "super_admin" || role === "admin" || role === "manager") {
       return history.push("/admin");
     }
     if (role === "doctor") {
@@ -55,7 +55,7 @@ const Login = () => {
 
       setLoading(true);
       const response = await axios.post(`${apiURL}/auth/login`, newData);
-      console.log(response)
+      console.log(response);
       if (response.status === 200) {
         setLoading(false);
         localStorage.setItem("token", response.data.token);
