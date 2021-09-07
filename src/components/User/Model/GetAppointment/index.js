@@ -8,7 +8,7 @@ import { apiURL } from '../../../../utils/apiURL'
 import SuccessAppointment from '../Alert/SuccessAppointment/index'
 
 const GetAppointment = ({ hidemodal, doctor }) => {
-    const { register, handleSubmit, errors } = useForm()
+    const { register, handleSubmit, formState: { errors } } = useForm()
     const [patient, setPatient] = useState({})
     const [isLoading, setLoading] = useState(false)
     const [isShowForm, setShowForm] = useState(false)
@@ -89,11 +89,9 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                                                 type="text"
                                                 name="name"
                                                 defaultValue={patient ? patient.name : null}
+                                                {...register("name", { required: "Name is required" })}
                                                 className="form-control shadow-none"
                                                 placeholder="Enter your name"
-                                                ref={register({
-                                                    required: "Name is required"
-                                                })}
                                             />
                                         </div>
                                     </div>
@@ -110,15 +108,13 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                                                 type="text"
                                                 name="phone"
                                                 defaultValue={patient ? patient.phone : null}
+                                                {...register("phone", { required: "Phone number is required",
+                                                pattern: {
+                                                    value: /^\(?([0-9]{3})\)?([0-9]{8})$/,
+                                                    message: "Number isn't valid."
+                                                } })}
                                                 className="form-control shadow-none"
                                                 placeholder="01xxxxxxxxx"
-                                                ref={register({
-                                                    required: "Phone number is required",
-                                                    pattern: {
-                                                        value: /^\(?([0-9]{3})\)?([0-9]{8})$/,
-                                                        message: "Number isn't valid."
-                                                    }
-                                                })}
                                             />
                                         </div>
                                     </div>
@@ -135,11 +131,9 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                                                 type="number"
                                                 name="age"
                                                 defaultValue={patient ? patient.age : null}
+                                                {...register("age", { required: "Age is required" })}
                                                 className="form-control shadow-none"
                                                 placeholder="Enter age"
-                                                ref={register({
-                                                    required: "Age is required"
-                                                })}
                                             />
                                         </div>
                                     </div>
@@ -156,11 +150,9 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                                                 type="number"
                                                 name="weight"
                                                 defaultValue={patient ? patient.weight : null}
+                                                {...register("weight", { required: "Weight is required" })}
                                                 className="form-control shadow-none"
                                                 placeholder="Enter weight (20, 50 KG)"
-                                                ref={register({
-                                                    required: "Weight is required"
-                                                })}
                                             />
                                         </div>
                                     </div>
@@ -177,11 +169,9 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                                                 type="number"
                                                 name="height"
                                                 defaultValue={patient ? patient.height : null}
+                                                {...register("height", { required: "Height is required" })}
                                                 className="form-control shadow-none"
                                                 placeholder="Enter height (5, 6 feet)"
-                                                ref={register({
-                                                    required: "Height is required"
-                                                })}
                                             />
                                         </div>
                                     </div>
@@ -198,11 +188,9 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                                                 type="text"
                                                 name="bloodPressure"
                                                 defaultValue={patient ? patient.bloodPressure : null}
+                                                {...register("bloodPresssure", { required: "Blood pressure is required" })}
                                                 className="form-control shadow-none"
                                                 placeholder="Enter BP (50/60, 60/70)"
-                                                ref={register({
-                                                    required: "Blood pressure is required"
-                                                })}
                                             />
                                         </div>
                                     </div>
@@ -218,12 +206,10 @@ const GetAppointment = ({ hidemodal, doctor }) => {
                                             <textarea
                                                 type="text"
                                                 name="problemShortInfo"
+                                                {...register("problemShortInfo", { required: "Discuss the short problem is required" })}
                                                 className="form-control shadow-none"
                                                 placeholder="Discuss the short problem"
                                                 rows="4"
-                                                ref={register({
-                                                    required: "Discuss the short problem is required"
-                                                })}
                                             />
                                         </div>
                                     </div>

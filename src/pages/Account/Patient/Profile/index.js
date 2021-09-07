@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure({ autoClose: 2000 });
 const Index = ({ user }) => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const [previewURL, setPreviewURL] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const [isUpload, setUpload] = useState(false);
@@ -125,11 +125,9 @@ const Index = ({ user }) => {
                           type="text"
                           name="name"
                           defaultValue={user ? user.name : null}
+                          {...register("name", { required: "Name is required" })}
                           className="form-control shadow-none"
                           placeholder="Name"
-                          ref={register({
-                            required: "Name is required",
-                          })}
                         />
                       </div>
                     </div>
@@ -163,10 +161,8 @@ const Index = ({ user }) => {
                           type="number"
                           name="age"
                           defaultValue={user ? user.age : null}
+                          {...register("age", { required: "Age is required" })}
                           className="form-control shadow-none"
-                          ref={register({
-                            required: "Age is required",
-                          })}
                         />
                       </div>
                     </div>
@@ -186,10 +182,8 @@ const Index = ({ user }) => {
                           type="text"
                           name="height"
                           defaultValue={user ? user.height : null}
+                          {...register("height", { required: "Height is required" })}
                           className="form-control shadow-none"
-                          ref={register({
-                            required: "Height is required",
-                          })}
                         />
                       </div>
                     </div>
@@ -209,11 +203,9 @@ const Index = ({ user }) => {
                           type="number"
                           name="weight"
                           defaultValue={user ? user.weight : null}
+                          {...register("weight", { required: "Weight is required" })}
                           className="form-control shadow-none"
                           placeholder="Weight (Kg)"
-                          ref={register({
-                            required: "Weight is required",
-                          })}
                         />
                       </div>
                     </div>
@@ -235,10 +227,8 @@ const Index = ({ user }) => {
                           type="text"
                           name="bloodPressure"
                           defaultValue={user ? user.bloodPressure : null}
+                          {...register("bloodPressure", { required: "Blood pressure is required" })}
                           className="form-control shadow-none"
-                          ref={register({
-                            required: "Blood pressure is required",
-                          })}
                         />
                       </div>
                     </div>
