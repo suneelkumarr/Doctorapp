@@ -16,7 +16,7 @@ const Index = () => {
       <Layout />
       <div className="main">
         <Switch>
-          <Route exact path="/admin/" component={Dashboard} />
+          <Route exact path="/admin" component={Dashboard} />
           <Route exact path="/admin/doctor" component={DoctorIndex} />
           <Route exact path="/admin/doctor/:id/show" component={DoctorShow} />
           <Route exact path="/admin/admin-list" component={AdminIndex} />

@@ -29,6 +29,9 @@ const Login = () => {
     const id = decode.id;
     localStorage.setItem("id", id);
 
+    if (role === "super_admin") {
+      return history.push("/admin");
+    }
     if (role === "doctor") {
       return history.push("/doctor");
     }

@@ -54,9 +54,17 @@ function App() {
             <Route exact path="/messages">
               <ChatIndex />
             </Route>
-
+            
             {/* Admin Master */}
-            <PrivateRoute path="/admin" role="doctor">
+            <PrivateRoute exact path="/admin" role="super_admin">
+              <AdminMaster />
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/admin" role="admin">
+              <AdminMaster />
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/admin" role="manager">
               <AdminMaster />
             </PrivateRoute>
             {/* <Route path="/admin" role="admin">

@@ -8,13 +8,14 @@ import { Images } from "../../../utils/Images";
 
 const Index = () => {
   const [isShow, setShow] = useState(false);
-  const [token, setToken] = useState();
+  const [token, setToken] = useState(localStorage.getItem("token") || undefined);
+  console.log(token);
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setToken(localStorage.getItem("token"));
     }
   }, []);
-
+  
   return (
     <div className="custom-navnar">
       <div className="main-navbar">

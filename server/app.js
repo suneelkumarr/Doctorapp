@@ -10,7 +10,7 @@ const app = express()
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors({origin: '*'}))
 app.use(fileUpload())
 
 app.use('/uploads/doctor/profiles', express.static('uploads/doctor/profiles/'))
