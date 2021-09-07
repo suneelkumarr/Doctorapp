@@ -16,6 +16,7 @@ const Index = () => {
   const [doctor, setDoctor] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
+    //fetch Doctors
   const fetchDoctors = async () => {
     try {
       const response = await axios.get(`${apiURL}/client/doctors`);
@@ -36,18 +37,6 @@ const Index = () => {
       setLatitude(position.coords.latitude);
       setLongitude(position.coords.longitude);
     });
-
-    //fetch Doctors
-
-    // const fetchDoctors = async () => {
-    //   try {
-    //     const response = await axios.get(`${apiURL}client/doctors`);
-    //     setDoctor(response.data.doctor);
-    //     setLoading(false);
-    //   } catch (error) {
-    //     if (error) console.log(console.response);
-    //   }
-    // };
     setLoading(true)
     fetchDoctors();
   }, []);

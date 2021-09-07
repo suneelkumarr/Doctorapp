@@ -9,8 +9,8 @@ const isPatient = async (req, res, next) => {
         if (!token) return res.status(404).json({ message: 'Token not found' })
 
         // decode token
-        const splitToken = await req.headers.authorization.split(' ')[1]
-        const decode = await jwt.verify(splitToken, 'SECRET')
+        const splitToken = token.split(' ')[1]
+        const decode = jwt.verify(splitToken, 'SECRET')
 
         // find user using token 
         const user = await Patient.findOne({ $and: [{ _id: decode.id }, { access_token: splitToken }] }, { role: 'patient' }).exec()
@@ -26,6 +26,7 @@ const isPatient = async (req, res, next) => {
         }
 
     } catch (error) {
+        console.log(error)
         if (error) {
             if (error.name === 'TokenExpiredError') {
                 return res.status(410).json({ message: 'Token expired' })

@@ -22,7 +22,7 @@ const Master = () => {
   const [header] = useState({
     headers: { Authorization: "Bearer " + localStorage.getItem("token") },
   });
-
+console.log(header)
   useEffect(() => {
     // Fetch Logged User
     const loggedUser = async () => {

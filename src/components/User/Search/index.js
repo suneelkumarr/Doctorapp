@@ -12,7 +12,7 @@ const Index = ({
 }) =>{
     const history= useHistory()
     const {register,handleSubmit,formState: { errors }} = useForm()
-    const {specialist, setSpecialist} = useState()
+    const [specialist, setSpecialist] = useState()
 
     const options = [
         {value: 'Medicine' , label:'Medicine'},
